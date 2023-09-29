@@ -51,7 +51,6 @@ const useAllCampaigns = () => {
   }, [campaignNo, provider]);
 
   useEffect(() => {
-    // Listen for event
     const handleProposeCampaignEvent = (id, title, amount, duration) => {
       console.log({ id, title, amount, duration });
       const newCampaign = {
