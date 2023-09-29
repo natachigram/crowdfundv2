@@ -20,11 +20,11 @@ const useAllCampaigns = () => {
           (_, i) => i + 1
         );
         const campaignPromises = campaignsKeys.map((id) => contract.crowd(id));
-        const campaignContributors = campaignsKeys.map(async (id) => {
-          const allContributors = await contract.getContributors(id);
-          const contributors = allContributors.toArray();
-          return contributors;
-        });
+        const campaignContributors = campaignsKeys.map((id) =>
+          contract.getContributors(id)
+        );
+        //   const contributors = allContributors.toArray();
+        //   return contributors;
 
         const campaignResults = await Promise.all(campaignPromises);
         const contributorsResults = await Promise.all(campaignContributors);

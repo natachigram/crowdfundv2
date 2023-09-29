@@ -113,12 +113,12 @@ const Campaign = () => {
               <p className='mt-2 font-bold text-gray-500'>
                 Funding Goal - {formatEther(campaign?.fundingGoal)} ETH
               </p>
-              <p className='mt-2 font-bold text-gray-500'>
+              <div className='mt-2 font-bold text-gray-500'>
                 Contributors :{' '}
-                {campaign?.contributors.map((contributor) => {
-                  return <p>{contributor}</p>;
+                {campaign?.contributors.map((contributor, index) => {
+                  return <p key={index}>{contributor}</p>;
                 })}
-              </p>
+              </div>
             </div>
           </div>
         </div>
