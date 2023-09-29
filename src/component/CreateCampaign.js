@@ -38,6 +38,7 @@ const CreateCampaign = () => {
             if (receipt.status === 0) return alert("tx failed");
 
             alert("campaign created!!");
+            setIsOpen(false)
         } catch (error) {
             console.log("error: ", error);
             if (error.info.error.code === 4001) {
